@@ -1,17 +1,17 @@
-div.div1 {
-	border: solid; black; 1;
+#div1 {
+	border: black;
 	height: 100px;
 	width: 100px;
 }
 
-div.div2 {
-	border: solid; green; 1;
+#div2 {
+	border: green;
 	height: 100px;
 	width: 100px;
 }
 
-div.div3 {
-	border: solid; purple; 1;
+#div3 {
+	border: purple;
 	height: 100px;
 	width: 100px;
 }
