@@ -1,5 +1,5 @@
 #div1 {
-	border: black;
+	border: solid, black, 1;
 	background-color: yellow;
 	height: 100px;
 	width: 20%;
