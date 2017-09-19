@@ -1,21 +1,21 @@
 #div1 {
 	border: black;
 	background-color: yellow;
-	height: 30%;
+	height: 100px;
 	width: 20%;
 }
 
 #div2 {
 	border: green;
 	background-color: lightgray;
-	height: 30%;
+	height: 100px;
 	width: 20%;
 }
 
 #div3 {
 	border: purple;
 	background-color: beige;
-	height: 30%;
+	height: 100px;
 	width: 20%;
 }
 
