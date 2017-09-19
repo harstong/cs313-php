@@ -1,17 +1,20 @@
 #div1 {
 	border: black;
+	background-color: yellow;
 	height: 100px;
 	width: 100px;
 }
 
 #div2 {
 	border: green;
+	background-color: lightgray;
 	height: 100px;
 	width: 100px;
 }
 
 #div3 {
 	border: purple;
+	background-color: beige;
 	height: 100px;
 	width: 100px;
 }
