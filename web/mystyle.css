@@ -24,6 +24,13 @@
 div:hover {
 	font-weight: bold;
 }
+div button {
+	width: 95%;
+	position: center;
+}
+div p {
+	position: center;
+}
 #colorChangeButton {
 	float: right;
 }
