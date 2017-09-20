@@ -4,6 +4,6 @@ function myFunction(){
 
 function colorChangeButton(){
 	color = document.getElementById("colorChangeInput").value;
-	document.getElementById("div1").setAttribute("backgroundColor", color);
+	document.getElementById("div1").style.backgroundColor = color;
 	
 }
