@@ -29,6 +29,7 @@ div:hover {
 }
 
 #colorChangeButton {
+	display: block;
 	width: auto;
 	margin: auto;
 }
@@ -36,6 +37,7 @@ div:hover {
 	margin: auto;
 }
 button {
+	display: block;
 	background-color: lightblue;
 	width: 20%;
 	height: auto;
