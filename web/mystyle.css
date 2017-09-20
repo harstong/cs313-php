@@ -31,11 +31,12 @@ div button {
 div p {
 	position: center;
 }
+div input {
+	position: center;
+}
 #colorChangeButton {
-	float: right;
 }
 #colorChangeInput {
-	float: right;
 }
 button {
 	background-color: lightblue;
