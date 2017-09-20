@@ -15,6 +15,7 @@
 	width: 200px;
 	font-size: 30px;
 	margin: auto;
+	text-align: center;
 }
 
 #div3 {
@@ -24,6 +25,7 @@
 	width: 200px;
 	font-size: 20px;
 	margin: auto;
+	text-align: center;
 }
 div:hover {
 	font-weight: bold;
