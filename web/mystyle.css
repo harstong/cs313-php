@@ -5,6 +5,7 @@
 	width: 200px;
 	font-size: 10px;
 	margin: auto;
+	text-align: center;
 }
 
 #div2 {
@@ -34,6 +35,7 @@ div:hover {
 	margin: auto;
 }
 #colorChangeInput {
+	display: block;
 	margin: auto;
 }
 button {
