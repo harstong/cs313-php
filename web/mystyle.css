@@ -13,6 +13,7 @@
 	height: 100px;
 	width: 200px;
 	font-size: 30px;
+	margin: auto;
 }
 
 #div3 {
@@ -21,6 +22,7 @@
 	height: 100px;
 	width: 200px;
 	font-size: 20px;
+	margin: auto;
 }
 div:hover {
 	font-weight: bold;
@@ -28,11 +30,14 @@ div:hover {
 
 #colorChangeButton {
 	width: auto;
+	margin: auto;
 }
 #colorChangeInput {
+	margin: auto;
 }
 button {
 	background-color: lightblue;
 	width: 20%;
 	height: auto;
+	margin: auto;
 }
