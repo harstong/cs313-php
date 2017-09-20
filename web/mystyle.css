@@ -27,6 +27,7 @@ div:hover {
 }
 
 #colorChangeButton {
+	width: auto;
 }
 #colorChangeInput {
 }
