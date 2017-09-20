@@ -27,6 +27,9 @@ div:hover {
 #colorChangeButton {
 	float: right;
 }
+#colorChangeInput {
+	float: right;
+}
 button {
 	background-color: lightblue;
 	width: 20%;
