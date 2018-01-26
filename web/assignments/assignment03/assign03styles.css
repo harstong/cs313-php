@@ -1,0 +1,11 @@
+.light-background{
+	background-color: skyblue;
+}
+table th tr td {
+	padding: 5px;
+}
+
+td:hover {
+	background-color: #d8fffe;
+	font-weight: bold;
+}

@@ -1,28 +1,32 @@
 <!DOCTYPE html>
 
+<?php
+	$assignments = ['Assignment 01', 'Assignment 02', 'Assignment 03', 'Assignment 04'];
+?>
 <html>
-<head>
-  <title>Gregory's Home Page</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-</head>
+<?php 
+	require 'head.php';
+	require 'header.php';
+?>
 	
 <body>
-	<nav class="navbar navbar-default">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="assignment02/index.php">Gregory's Home Page</a>
-			</div>
-			<ul class="nav navbar-nav">
-				<li><a href="assignment02/index.php">Home</a></li>
-				<li class="active"><a href="#">Assignments</a></li>
-			</ul>
-		</div>
-	</nav>
-	<h1> COMMING SOON </h1>
+	<div class="table-responsive">
+		<table class="table-hover">
+			<tr>
+				<td><a href="../hello.html">Assignment 01 - Hello World </a></td>
+			</tr>
+			
+			<tr>
+				<td><a href="assignment02/assign02.php">Assignment 02 - Homepage </a></td>
+			</tr>
+			
+			<tr>
+				<td><a href="assignment03/assign03.php">Assignment 03 - Shopping Cart </a></td>
+			</tr>
+			
+			
+		</table>
+	</div>
+	
 </body>
 </html>
