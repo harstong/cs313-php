@@ -9,3 +9,12 @@ td:hover {
 	background-color: #d8fffe;
 	font-weight: bold;
 }
+
+img{
+	width: 100px;
+	height: 150px;
+}
+
+.number_input{
+	width: 50px;
+}
