@@ -1,0 +1,49 @@
+#div1 {
+	border-style: solid;
+	background-color: yellow;
+	height: auto;
+	width: 200px;
+	font-size: 10px;
+	margin: auto;
+	text-align: center;
+}
+
+#div2 {
+	border-style: dashed;
+	background-color: lightgray;
+	height: 100px;
+	width: 200px;
+	font-size: 30px;
+	margin: auto;
+	text-align: center;
+}
+
+#div3 {
+	border-style: dotted dashed solid double;
+	background-color: beige;
+	height: 100px;
+	width: 200px;
+	font-size: 20px;
+	margin: auto;
+	text-align: center;
+}
+div:hover {
+	font-weight: bold;
+}
+
+#colorChangeButton {
+	display: block;
+	width: auto;
+	margin: auto;
+}
+#colorChangeInput {
+	display: block;
+	margin: auto;
+}
+button {
+	display: block;
+	background-color: lightblue;
+	width: 20%;
+	height: auto;
+	margin: auto;
+}
