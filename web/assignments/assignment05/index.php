@@ -22,9 +22,11 @@ require 'header.php';
 		
 		$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		
-		$statement = $db->query("SELECT * FROM users");
-		$results = $statement->fetchAll(PDO::FETCH_ASSOC);
-		echo "<p> $results </p>";
+		foreach ($db->query("SELECT fname, lname FROM users") as $row)
+		{
+			echo 'user: ' . $row['fname'] . ' ' . $row['lname'];
+		};
+		
 		?>
 	</div>
 	
