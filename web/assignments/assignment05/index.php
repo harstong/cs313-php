@@ -2,6 +2,7 @@
 
 <html>
 <?php
+require 'head.php';
 require 'header.php';
 ?>
 <body class="light-background">
