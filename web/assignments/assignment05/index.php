@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 
 <html>
-
+<?php
+require 'header.php';
+?>
 <body class="light-background">
 
 	<div class="container"> 
