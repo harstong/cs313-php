@@ -6,8 +6,8 @@ $db = new PDO($dsn);
 
 <html>
 <?php 
-require 'assign03head.php';
-require 'assign03header.php';
+require '../assingment03/assign03head.php';
+require '../assignment03/assign03header.php';
 ?>
 <body class="light-background">
 
