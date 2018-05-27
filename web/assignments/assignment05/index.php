@@ -24,6 +24,7 @@ require 'header.php';
 		
 		$statement = $db->query("SELECT * FROM users");
 		$results = $statement->fetchAll(PDO::FETCH_ASSOC);
+		echo "<p> $results </p>";
 		?>
 	</div>
 	
