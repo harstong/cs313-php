@@ -24,7 +24,7 @@ require 'header.php';
 		
 		foreach ($db->query("SELECT fname, lname FROM users") as $row)
 		{
-			echo 'user: ' . $row['fname'] . ' ' . $row['lname'];
+			echo 'user: ' . $row['fname'] . ' ' . $row['lname'] . '<br>';
 		};
 		
 		?>
