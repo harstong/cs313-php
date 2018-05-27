@@ -8,7 +8,23 @@ require 'header.php';
 <body class="light-background">
 
 	<div class="container"> 
-		<h1> Hello </h1>
+		<?php
+		$dbUrl = getenv('DATABASE_URL');
+		$dbopts = parse_url($dbUrl);
+		
+		$dbHost = $dbopts["host"];
+		$dbPort = $dbopts["port"];
+		$dbUser = $dbopts["user"];
+		$dbPassword = $dbopts["pass"];
+		$dbName = ltrim($dbopts["path"],'/');
+		
+		$db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+		
+		$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		
+		$statement = $db->query("SELECT * FROM users");
+		$results = $statement->fetchAll(PDO::FETCH_ASSOC);
+		?>
 	</div>
 	
 	<div class="container">
