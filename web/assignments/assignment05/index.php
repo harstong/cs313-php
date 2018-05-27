@@ -5,7 +5,10 @@ $db = new PDO($dsn);
 <!DOCTYPE html>
 
 <html>
-
+<?php 
+require 'assign03head.php';
+require 'assign03header.php';
+?>
 <body class="light-background">
 
 	<div class="container"> 
