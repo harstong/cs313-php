@@ -12,12 +12,7 @@ require '../assignment03/assign03header.php';
 <body class="light-background">
 
 	<div class="container"> 
-		<?php
-		$query = "Select * from users";
-		
-		$result = $db->query($query);
-		echo $result;
-		?>
+
 	</div>
 	
 	<div class="container">
