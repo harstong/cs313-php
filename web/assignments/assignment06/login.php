@@ -62,6 +62,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 echo "<h1>Oops! Something went wrong. Please try again later.</h1>";
             }
         }
+		else
+			echo "<h1> bummer </h1>";
         
         // Close statement
         unset($stmt);
