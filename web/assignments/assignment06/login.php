@@ -27,7 +27,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(empty($username_err) && empty($password_err)){
         // Prepare a select statement
 		// $str = pg_escape_string($username);
-        $sql = "SELECT username, password FROM users WHERE username = '{$str}'";
+        $sql = "SELECT username, password FROM users WHERE username = {$str}";
         
         if($stmt = $pdo->prepare($sql)){
             // Bind variables to the prepared statement as parameters
