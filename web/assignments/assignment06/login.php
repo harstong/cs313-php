@@ -26,7 +26,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Validate credentials
     if(empty($username_err) && empty($password_err)){
         // Prepare a select statement
-        $sql = "WITH myconstants (var1) as ( values ($username)) SELECT username, password FROM users WHERE username = var1";
+        $sql = "SELECT username, password FROM users WHERE username = ':username'";
         
         if($stmt = $pdo->prepare($sql)){
             // Bind variables to the prepared statement as parameters
@@ -46,11 +46,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             save the username to the session */
                             session_start();
                             $_SESSION['username'] = $username;  
-							$host = $_SERVER['HTTP_HOST'];
-							$uri  = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
-							$extra = 'welcome.php';
-							header("Location: http://$host$uri/$extra");
-                            //header("location: welcome.php");
+                            header("Location: welcome.php");
                         } else{
                             // Display an error message if password is not valid
                             $password_err = 'The password you entered was not valid.';
