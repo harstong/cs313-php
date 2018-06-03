@@ -14,9 +14,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $username_err = "Please enter a username.";
     } else{
         // Prepare a select statement
-		$con = pg_connect("dbname=$dbname");
-		$username_esc = pg_escape_literal($username);
-        $sql = pg_query($con, "SELECT id FROM users WHERE username = $username_esc");
+        $sql = pg_query_params('SELECT id FROM users WHERE username = $1', array($username));
         
         if($stmt = $pdo->prepare($sql)){
             // Bind variables to the prepared statement as parameters
@@ -64,9 +62,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(empty($username_err) && empty($password_err) && empty($confirm_password_err)){
         
         // Prepare an insert statement
-		//$username = mysql_real_escape_string($username);
-		//$password = mysql_real_escape_string($password);
-        $sql = "INSERT INTO users (username, password) VALUES ($username, $password)";
+        $sql = pg_query_params('INSERT INTO users (username, password) VALUES ($1, $2)', array($username, $password));
          
         if($stmt = $pdo->prepare($sql)){
             // Bind variables to the prepared statement as parameters
