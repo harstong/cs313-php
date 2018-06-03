@@ -53,3 +53,4 @@ INSERT INTO users VALUES (
 	'password1', 
 	CURRENT_TIMESTAMP
 );	
+
