@@ -40,6 +40,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             if($stmt->execute()){
                 // Check if username exists, if yes then verify password
                 if($stmt->rowCount() == 1){
+					echo "yeah row count = 1";
                     if($row = $stmt->fetch()){
                         $hashed_password = $row['password'];
                         if(password_verify($password, $hashed_password)){
