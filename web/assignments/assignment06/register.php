@@ -15,7 +15,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     } else{
         // Prepare a select statement
 		$username = mysql_real_escape_string($username);
-        $sql = "SELECT id FROM users WHERE username = '$username'";
+        $sql = "SELECT id FROM users WHERE username = $username";
         
         if($stmt = $pdo->prepare($sql)){
             // Bind variables to the prepared statement as parameters
@@ -65,7 +65,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         // Prepare an insert statement
 		$username = mysql_real_escape_string($username);
 		$password = mysql_real_escape_string($password);
-        $sql = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
+        $sql = "INSERT INTO users (username, password) VALUES ($username, $password)";
          
         if($stmt = $pdo->prepare($sql)){
             // Bind variables to the prepared statement as parameters
