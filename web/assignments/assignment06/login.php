@@ -30,7 +30,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         
         if($stmt = $pdo->prepare($sql)){
             // Bind variables to the prepared statement as parameters
-            $stmt->bindParam($username, $param_username, PDO::PARAM_STR);
+            $stmt->bindParam(':username', $param_username, PDO::PARAM_STR);
             
             // Set parameters
             $param_username = trim($_POST["username"]);
@@ -45,8 +45,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             /* Password is correct, so start a new session and
                             save the username to the session */
                             session_start();
-                            $_SESSION['username'] = $username;      
-                            header("location: welcome.php");
+                            $_SESSION['username'] = $username;  
+							$host = $_SERVER['HTTP_HOST'];
+							$uri  = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+							$extra = 'welcome.php';
+							header("Location: http://$host$uri/$extra");
+                            //header("location: welcome.php");
                         } else{
                             // Display an error message if password is not valid
                             $password_err = 'The password you entered was not valid.';
