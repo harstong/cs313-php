@@ -26,25 +26,21 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Validate credentials
     if(empty($username_err) && empty($password_err)){
         // Prepare a select statement
-        $sql = "SELECT username, password FROM users WHERE username = ?";
+        $sql = "SELECT username, password FROM users WHERE username = :username";
         
-        if($stmt = $mysqli->prepare($sql)){
+        if($stmt = $pdo->prepare($sql)){
             // Bind variables to the prepared statement as parameters
-            $stmt->bind_param("s", $param_username);
+            $stmt->bindParam(':username', $param_username, PDO::PARAM_STR);
             
             // Set parameters
-            $param_username = $username;
+            $param_username = trim($_POST["username"]);
             
             // Attempt to execute the prepared statement
             if($stmt->execute()){
-                // Store result
-                $stmt->store_result();
-                
                 // Check if username exists, if yes then verify password
-                if($stmt->num_rows == 1){                    
-                    // Bind result variables
-                    $stmt->bind_result($username, $hashed_password);
-                    if($stmt->fetch()){
+                if($stmt->rowCount() == 1){
+                    if($row = $stmt->fetch()){
+                        $hashed_password = $row['password'];
                         if(password_verify($password, $hashed_password)){
                             /* Password is correct, so start a new session and
                             save the username to the session */
@@ -66,11 +62,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         }
         
         // Close statement
-        $stmt->close();
+        unset($stmt);
     }
     
     // Close connection
-    $mysqli->close();
+    unset($pdo);
 }
 ?>
  
@@ -105,6 +101,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
             <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
         </form>
-    </div>    
+    </div>
 </body>
-</html> 
+</html>
