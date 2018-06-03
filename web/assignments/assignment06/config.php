@@ -1,16 +1,16 @@
 <?php
 /* Database credentials. Assuming you are running MySQL
 server with default setting (user 'root' with no password) */
-define('DB_SERVER', 'localhost');
-define('DB_USERNAME', 'root');
-define('DB_PASSWORD', '');
-define('DB_NAME', 'demo');
- 
-/* Attempt to connect to MySQL database */
-$mysqli = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
- 
-// Check connection
-if($mysqli === false){
-    die("ERROR: Could not connect. " . $mysqli->connect_error);
-}
+	$dbUrl = getenv('DATABASE_URL');
+	$dbopts = parse_url($dbUrl);
+		
+	$dbHost = $dbopts["host"];
+	$dbPort = $dbopts["port"];
+	$dbUser = $dbopts["user"];
+	$dbPassword = $dbopts["pass"];
+	$dbName = ltrim($dbopts["path"],'/');
+		
+	$db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+		
+	$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 ?>
