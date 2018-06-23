@@ -9,6 +9,13 @@ CREATE TABLE users(
 	last_login TIMESTAMP
 );
 
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
 CREATE TABLE posts (
 	id SERIAL NOT NULL PRIMARY KEY,
 	user_id int references users(id),
@@ -34,23 +41,5 @@ CREATE SEQUENCE subject_sequence
 	start 1
 	increment 1;
 	
-INSERT INTO users VALUES (
-	nextval('users_sequence'), 
-	'Gregory', 
-	'Harston', 
-	'harstong', 
-	'mail123@test.com', 
-	'password', 
-	CURRENT_TIMESTAMP
-);	
 
-INSERT INTO users VALUES (
-	nextval('users_sequence'), 
-	'Ashley', 
-	'Harston', 
-	'ashzum', 
-	'mail@test.com', 
-	'password1', 
-	CURRENT_TIMESTAMP
-);	
 
