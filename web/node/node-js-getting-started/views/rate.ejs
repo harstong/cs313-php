@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Postal Rate Calculator </title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+	<table class="table">
+		<tr class="success">
+			<th> Your Package type is </th>
+			<th><%= data.mailType %></th>
+		</tr>
+		<tr class="success">
+			<th> with a weight of </th> 
+			<th><%= data.weight %>lb</th>
+		</tr>
+		<tr class="info">
+			<th> TOTAL </th>
+			<th> 
+			<% var price; 
+				if (data.mailType == "Letters (Stamped)"){
+					price = 0
+					if (data.weight < 1)
+						price = .5;
+					else if(data.weight < 2)
+						price = .71
+					else if(data.weight < 3)
+						price = .92
+					else if(data.weight < (3.5 * 3.5 * 3.5))
+						price = 1.13
+					else 
+						price = "mail is too heavy for type selected"
+				}else if(data.mailType == "Letters (Metered)"){
+					price = 0;
+					if (data.weight < 1)
+						price = .47;
+					else if(data.weight < 2)
+						price = .68
+					else if(data.weight < 3)
+						price = .89
+					else if(data.weight < (3.5 * 3.5 * 3.5 * 3.5))
+						price = 1.10
+					else 
+						price = "mail is too heavy for type selected"
+				}else if(data.mailType == "Large Envelopes (Flats)"){
+					price = 0.79
+					var i
+					for (i = 1; i <= 13; i++){
+						price += 0.21
+						if(data.weight > 13)
+							price = "mail is too heavy for type selected"
+						else if(data.weight < i){
+							i = 14;
+						}
+					}	
+				}else{
+					price = 3.75;
+					if (data.weight > 13)
+						price = "mail is too heavy for type selected"
+					else if(data.weight < 4)
+						price = 3.50
+					else if (data.weight < 8)
+						price = 3.75		
+					else{
+						price = 3.75
+						for (var i = 9; i <= 13; i++){
+							price += .35
+							if(data.weight < i)
+								i = 14
+						}
+					}	
+				}
+				price = new Intl.NumberFormat('en-US', {style:'currency', currency:'USD'}).format(price);
+				
+				
+			%>
+			
+			<%= price %></th>
+		</tr>
+	</table>
+</body>
+</html>
